@@ -22,7 +22,7 @@ const Home = () => {
 
   return (
     <div className="h-screen space-y-4 flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold">Welcome, {user?.username}!</h1>
+      <h1 className="text-3xl text-center font-bold">Welcome, {user?.username}!</h1>
       <Button
         onClick={logout}
         size="lg"
