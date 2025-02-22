@@ -10,6 +10,7 @@ import { z } from "zod";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import PasswordInput from "./ui/password-input";
+import { Card } from "./ui/card";
 
 const schema = z.object({
   username: z.string().min(3, "Username must be at least 3 characters"),
@@ -54,8 +55,10 @@ const RegisterModal = ({ close }: { close: () => void }) => {
 
   return (
     <div className="fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center transition-all duration-300 ease-in-out">
-      <div className="absolute top-0 bottom-0 left-0 right-0 z-0 bg-black opacity-50" onClick={close} />
-      <div className="relative z-10 min-w-md p-6 pb-0 space-y-4 bg-background shadow-md rounded-lg">
+      <div className="absolute top-0 bottom-0 left-0 right-0 z-0 bg-black/50" onClick={close} />
+      <Card
+        className="relative z-10 min-w-full sm:min-w-md p-6"
+      >
         <h2 className="text-2xl font-bold">Register</h2>
 
         {error && <p className="text-sm text-red-500">{error}</p>}
@@ -81,7 +84,7 @@ const RegisterModal = ({ close }: { close: () => void }) => {
         <Button onClick={close} className="absolute top-2 right-2" variant="ghost" size="icon">
           <XIcon size={24} />
         </Button>
-      </div>
+      </Card>
     </div>
   );
 };

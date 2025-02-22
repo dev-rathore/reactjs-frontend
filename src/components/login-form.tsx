@@ -8,6 +8,7 @@ import { loginUser } from "@/api/auth";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import PasswordInput from "./ui/password-input";
+import { Card } from "./ui/card";
 
 const LoginForm = ({ openRegister }: { openRegister: () => void }) => {
   const [username, setUsername] = useState<string>("");
@@ -25,6 +26,9 @@ const LoginForm = ({ openRegister }: { openRegister: () => void }) => {
       navigate("/");
     },
     onError: (error: any) => {
+      if (error.response?.data?.message === "User doesn't exist") {
+        openRegister();
+      }
       setError(error.response?.data?.message || "Login failed");
       toast.error(error.response?.data?.message || "Login failed");
     },
@@ -35,7 +39,7 @@ const LoginForm = ({ openRegister }: { openRegister: () => void }) => {
   };
 
   return (
-    <div className="max-w-lg min-w-md mx-auto p-6 space-y-4 bg-background shadow-md rounded-lg">
+    <Card className="min-w-full sm:min-w-md mx-auto p-6">
       <h2 className="text-2xl font-bold">Login</h2>
 
       {error && <p className="text-sm text-red-500">{error}</p>}
@@ -65,11 +69,11 @@ const LoginForm = ({ openRegister }: { openRegister: () => void }) => {
 
       <p className="text-sm">
         Not registered?{" "}
-        <button onClick={openRegister} className="text-blue-500 cursor-pointer">
+        <button onClick={openRegister} className="text-primary cursor-pointer">
           Register here
         </button>
       </p>
-    </div>
+    </Card>
   );
 };
 

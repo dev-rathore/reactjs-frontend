@@ -1,9 +1,10 @@
+import { useNavigate } from "react-router";
+import { useQuery } from "@tanstack/react-query";
+import { toast } from "sonner";
+
 import { fetchUserProfile } from "@/api/auth";
 import { Button } from "@/components/ui/button";
 import { removeAuthToken } from "@/lib/storage";
-import { useQuery } from "@tanstack/react-query";
-import { useNavigate } from "react-router";
-import { toast } from "sonner";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ const Home = () => {
       <Button
         onClick={logout}
         size="lg"
-        variant="destructive"
+        variant="outline"
       >
         Logout
       </Button>
