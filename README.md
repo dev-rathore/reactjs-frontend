@@ -1,5 +1,7 @@
 # React.js Frontend
 
+**Note**: I deployed the frontend on Vercel and the backend on Render. However, Render has started responding slowly, possibly due to its free plan limitations. Please try watching the video or running the project locally for a better experience.
+
 Production is live at [https://reactjs-frontend-nestjs.vercel.app/](https://reactjs-frontend-nestjs.vercel.app/)
 
 ## Setup Instructions
