@@ -6,6 +6,7 @@ const ProtectedRoute = () => {
   const { data: user, isLoading } = useQuery({
     queryKey: ['userProfile'],
     queryFn: fetchUserProfile,
+    retry: false,
   });
 
   if (isLoading) return (

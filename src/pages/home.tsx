@@ -12,6 +12,7 @@ const Home = () => {
   const { data: user } = useQuery({
     queryKey: ['userProfile'],
     queryFn: fetchUserProfile,
+    retry: false,
   });
 
   const logout = () => {
