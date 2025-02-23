@@ -57,19 +57,26 @@ const RegisterModal = ({ close }: { close: () => void }) => {
     <div className="fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center transition-all duration-300 ease-in-out">
       <div className="absolute top-0 bottom-0 left-0 right-0 z-0 bg-black/50" onClick={close} />
       <Card
-        className="relative z-10 min-w-full sm:min-w-md p-6"
+        className="relative z-10 mx-4 w-full sm:w-md p-6"
       >
         <h2 className="text-2xl font-bold">Register</h2>
 
         {error && <p className="text-sm text-red-500">{error}</p>}
 
         <div className="space-y-2">
-          <Input {...register("username")} placeholder="Username" type="text" />
+          <Input
+            {...register("username")}
+            placeholder="Username"
+            type="text"
+          />
           {errors.username && <p className="text-sm text-red-500">{errors.username.message}</p>}
         </div>
 
         <div className="space-y-2">
-          <PasswordInput {...register("password")} placeholder="Password" />
+          <PasswordInput
+            {...register("password")}
+            placeholder="Password"
+          />
           {errors.password && <p className="text-sm text-red-500">{errors.password.message}</p>}
         </div>
 

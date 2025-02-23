@@ -39,18 +39,20 @@ const LoginForm = ({ openRegister }: { openRegister: () => void }) => {
   };
 
   return (
-    <Card className="min-w-full sm:min-w-md mx-auto p-6">
+    <Card className="w-full sm:w-md mx-4 sm:mx-auto p-6">
       <h2 className="text-2xl font-bold">Login</h2>
 
       {error && <p className="text-sm text-red-500">{error}</p>}
 
       <Input
+        onBlur={() => setError("")}
         onChange={(e) => setUsername(e.target.value)}
         placeholder="Username"
         type="text"
       />
 
       <PasswordInput
+        onBlur={() => setError("")}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
       />
