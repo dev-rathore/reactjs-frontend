@@ -3,7 +3,7 @@ import { useState } from "react";
 import LoginForm from "@/components/login-form";
 import RegisterModal from "@/components/register-modal";
 
-const Login = () => {
+const LoginPage = () => {
   const [showRegisterModal, setShowRegisterModal] = useState(false);
 
   return (
@@ -16,4 +16,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;
